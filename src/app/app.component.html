@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light bg-primary">
+    <a class="navbar-brand text-light" href="#">G1</a>
+    <a class="nav-link text-light font-weight-bold" *ngIf="man()" (click)="out()" style="cursor: pointer;">Logout</a>
+</nav>
+<div class="d-flex justify-content-center">
+    <h1 class="text-primary">Wellcome to Ontario G1 Theory Test System</h1>
+
+</div>
+<div class="container ">
+
+    <router-outlet></router-outlet>
+
+
+</div>

@@ -1,0 +1,29 @@
+<div style="height: 10rem; background-color: #cad5e6;" class="container">
+    <div style="height: 100%;" class="row">
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <ul>
+                <li>To Finish the Mock test You should Answer All of It</li>
+                <li>The Questions Should Be Answered in 5 Minitues</li>
+                <li>After Answering the Questions Click Finish Button</li>
+            </ul>
+        </div>
+
+        <div class="col-6 d-flex justify-content-center align-items-center">
+            <div style="width: 100%;" class="button">
+                <div class="row">
+                    <div class="col-6 d-flex flex-column p-2">
+                        <button (click)="start()" [disabled]="!enabledAdd" type="button " class="btn btn-primary m-2">
+            Start
+          </button>
+                        <button (click)="pause()" [disabled]="enabledAdd" type="button" class="btn btn-primary m-2">
+            Pause
+          </button>
+                    </div>
+                    <div class="col-6 d-flex flex-column p-2">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

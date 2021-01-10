@@ -1,0 +1,159 @@
+<!-- <button (click)="getroad()" class="btn btn-danger">Get Questions</button> -->
+<section class="body">
+    <div class="d-flex justify-content-center align-items-center" style="width: 100%; height: 80vh;">
+        <div class="row" style="width: 100%; height: 100%;">
+            <div class="rapper col-4" style="overflow: auto; width: 100%; height: 100%;">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Road
+                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="rapper-inside d-flex flex-column align-items-end">
+                                    <ul class="list-unstyled w-100" *ngIf="meme.length> 0">
+                                        <li></li>
+                                        <li *ngFor="let nur of meme">
+                                            <button (click)="fireEvent(nur.ranking)" type="button" class="btn_num btn btn-outline-primary btn-block m-2">Question {{nur.ranking +1}}</button>
+                                        </li>
+                                    </ul>
+
+                                </div>
+
+                                <!-- <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+                                <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+                                <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button>
+                                <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+                                <button type="button" class="btn btn-secondary btn-lg btn-block">Block level button</button> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link collapsed meme" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Road1
+                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="rapper-inside d-flex flex-column align-items-end">
+                                    <ul class="list-unstyled w-100" *ngIf="meme1.length> 0">
+                                        <li></li>
+                                        <li *ngFor="let nur of meme1">
+                                            <button (click)="fireEvent1(nur.ranking)" type="button" class="btn_num btn btn-outline-primary btn-block m-2">Question {{nur.ranking +1}}</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header bg-light" id="headingThree">
+                            <h5 class="m123b-0">
+                                <button class="btn btn-link collapsed meme" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Road3
+                </button>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                <div class="rapper-inside d-flex flex-column align-items-end">
+                                    <ul class="list-unstyled w-100" *ngIf="meme2.length> 0">
+                                        <li></li>
+                                        <li *ngFor="let nur of meme2">
+                                            <button (click)="fireEvent2(nur.ranking)" type="button" class="btn_num btn btn-outline-primary btn-block m-2">Question {{nur.ranking +1}}</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-8" style="width: 100%; height: 100%;">
+                <div id="damda" style="width:100%;height:100%" class="anwardadam d-flex justify-content-center align-items-center">
+                    <div class="d-flex flex-column align-items-center">
+                        <h3 class="">
+                            To View The Questions Please Click
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+
+                        </h3>
+                        <img src="../../../assets/img/img.png" width="275" height="250">
+
+                    </div>
+
+
+
+                </div>
+                <div class="pt-2" id="ques_container" style="display: none; width: 100%; height: 100%; background-color:  #f7faff;">
+                    <h3 class="questitle text-primary text-center">
+                        {{ speccificQues.ques }}
+                    </h3>
+                    <div class="row">
+                        <div class="col-12">
+                            <label (click)="addUser('A')" class="text-primary container selection">
+                            <input id="radioBOx1" type="radio" name="radio" />
+                            &nbsp;{{ speccificQues.A }}
+                            <span class="checkmark"></span>
+                          </label>
+
+                            <label (click)="addUser('B')" class="text-primary container selection">
+                            <input id="radioBOx2" type="radio" name="radio" />&nbsp;{{
+                              speccificQues.B
+                            }}
+                            <span class="checkmark"></span>
+                          </label>
+
+                            <label (click)="addUser('C')" class="text-primary container selection">
+                            <input  id="radioBOx3" type="radio" name="radio" />
+                            &nbsp;{{  speccificQues.C }}
+                            <span class="checkmark"></span>
+                          </label>
+                            <label (click)="addUser('D')" class="text-primary container selection">
+                            <input id="radioBOx4" type="radio" name="radio" />&nbsp;{{
+                              speccificQues.D
+                            }}
+                            <span class="checkmark"></span>
+                          </label>
+
+
+                        </div>
+
+                    </div>
+                    <h4 class="text-danger w-100 d-flex justify-content-around mt-5 ">
+                        <a (click)="saveToggle() ">
+                            <i [ngClass]="saveButton ? 'fa fa-star-o' : 'fa fa-star' "></i> &nbsp;Save
+                        </a>
+                        <a (click)=" toggle() ">
+                            <i [ngClass]=" toggledBtn? 'fa fa-thumbs-o-up' : 'fa fa-thumbs-up' "></i> &nbsp;Done
+                        </a>
+
+                    </h4>
+                    <button (click)="confirm() " type="button " class="btn btn-outline-primary btn-block mb-3 ">
+                      Submit
+                    </button>
+                    <div class="row" style="height: 40%;">
+                        <div class="col-12 d-flex justify-content-center">
+                            <img id="picture" [src]="speccificQues.photo" alt="" style="width: 100%;height: 100%; display: none">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</section>

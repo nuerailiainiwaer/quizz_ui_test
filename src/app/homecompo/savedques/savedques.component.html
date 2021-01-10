@@ -1,0 +1,95 @@
+<div class="container">
+
+    <!-- <table class="table text-primary">
+        <thead class="thead-dark">
+            <tr>
+                <th class="questionwidth" scope="col">Saved Questions</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <ul class="list-unstyled w-100">
+                <li class="card card-body mb-2" *ngFor="let ques of questions">
+                    <div class="d-flex justify-content-between">
+                        <h5>
+                            {{ ques.ques }}
+                            <small>
+                          <button
+                            (click)="ques.hide = !ques.hide"
+                            class="btn btn-dark btn-sm"
+                          >
+                            <i [ngClass]="ques.hide ? 'fa fa-minus' : 'fa fa-plus'"></i>
+                          </button>
+                          <button type="button" class="btn btn-danger">
+                            Delete
+                          </button>
+              </small>
+                        </h5>
+
+                        <div class=""></div>
+                    </div>
+
+                    <ul class="list-group" *ngIf="ques.hide">
+                        <li class="list-group-item m-2">A: {{ ques.A }}</li>
+                        <li class="list-group-item m-2">B: {{ ques.B }}</li>
+                        <li class="list-group-item m-2">C: {{ ques.C }}</li>
+                        <li class="list-group-item m-2">D: {{ ques.D }}</li>
+                    </ul>
+                </li>
+            </ul>
+        </tbody>
+    </table> -->
+
+    <!--
+    <ul class="list-untyled" *ngIf="questions?.length>0">
+        <li class="card card-body mb-2" *ngFor='let ques of questions'>
+            <h5>
+                {{ ques.ques }}
+                <small>
+          <button
+            (click)="ques.hide = !ques.hide"
+            class="btn btn-dark btn-sm"
+          >
+            <i [ngClass]="ques.hide ? 'fa fa-minus' : 'fa fa-plus'"></i>
+          </button>
+          <button type="button" class="btn btn-danger">
+            Delete
+          </button>
+</small>
+            </h5>
+            <ul *ngIf="ques.hide">
+                <li class="list-group-item">{{ques.A}}</li>
+                <li class="list-group-item">{{ques.B}}</li>
+            </ul>
+        </li>
+
+
+    </ul> -->
+
+
+    <div id="accordion">
+        <div class="card backgorund" *ngFor="let ques of questions">
+            <div class="card-header" id="{{'object-'+ques._id}}">
+                <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" attr.data-target="{{'#bb-'+ques._id}}" aria-expanded="true" attr.aria-controls="{{'bb-'+ques._id}}">
+                      {{ ques.ques }}
+            </button>
+                </h5>
+            </div>
+
+            <div id="{{'bb-'+ques._id}}" class="collapse" attr.aria-labelledby="{{'object-'+ques._id}}" data-parent="#accordion">
+                <div class="card-body">
+                    <ul class="list-group">
+                        <li class="list-group-item m-2">A: {{ ques.A }}</li>
+                        <li class="list-group-item m-2">B: {{ ques.B }}</li>
+                        <li class="list-group-item m-2">C: {{ ques.C }}</li>
+                        <li class="list-group-item m-2">D: {{ ques.D }}</li>
+                        <li class="list-group-item m-2 text-right font-weight-bold">Right Choice : {{ ques.anS }}</li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

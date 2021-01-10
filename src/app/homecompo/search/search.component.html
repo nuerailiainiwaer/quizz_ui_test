@@ -1,0 +1,18 @@
+<nav class="navbar">
+    <input class="form-control" type='text' name='que' [(ngModel)]="ques" (ngModelChange)="search()" placeholder="Please enter a key word">
+
+</nav>
+<table class="table  table-boardered">
+    <thead>
+        <th class="text-primary">Question Topic</th>
+
+    </thead>
+    <tbody>
+        <tr class="text-primary" *ngFor="let que of  meme">
+            <th>{{que.ques}}</th>
+
+        </tr>
+
+    </tbody>
+
+</table>

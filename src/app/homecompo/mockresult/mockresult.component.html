@@ -1,0 +1,99 @@
+<app-mock (emittingStart)="OnNewPost($event)" [restartQuiz]="restartQuiz" [restartQuiz]="inputFunction()">
+</app-mock>
+
+<section [class.makingBlur]="startQues" class="body">
+    <div class="container border p-4">
+        <div class="rapper ml-4">
+            <h4 class="text-primary mb-3">
+                Question {{ speccificQues.ranking + 1 }} : &nbsp;{{ speccificQues.ques }}
+            </h4>
+            <div class="row" style="height: 10rem;">
+                <div class="col-7 ml-4">
+                    <label (click)="addUser('A')" class="container selection">
+            <input id="radioBOx1" type="radio" name="radio" />
+            &nbsp;{{ speccificQues.A }}
+            <span class="checkmark"></span>
+          </label>
+                    <label (click)="addUser('B')" class="container selection">
+            <input id="radioBOx2" type="radio" name="radio" />
+            &nbsp;{{ speccificQues.B }}
+            <span class="checkmark"></span>
+          </label>
+                    <label (click)="addUser('C')" class="container selection">
+            <input id="radioBOx3" type="radio" name="radio" />
+            &nbsp;{{ speccificQues.C }}
+            <span class="checkmark"></span>
+          </label>
+                    <label (click)="addUser('D')" class="container selection">
+            <input id="radioBOx4" type="radio" name="radio" />
+            &nbsp;{{ speccificQues.D }}
+            <span class="checkmark"></span>
+          </label>
+                </div>
+
+                <div class="col-4">
+                    <p id="countdown"></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-9">
+                    <button type="button" [disabled]="!enableConrim" class="mb-2 btn btn-secondary btn-sm btn-block" (click)="confirm()">
+            Confirm
+          </button>
+                </div>
+                <div class="col-3">
+                    <button [disabled]="!enableSubmit" type="button" class="mb-2 btn btn-danger btn-sm btn-block" (click)="submitMock()">
+            Submit
+          </button>
+                </div>
+            </div>
+
+            <div data-simplebar class="scrollmenu text-primary text-center">
+                <a [class.bg-warning]="final[0].answerTheQues" (click)="fireevent(0)">1</a
+        >
+        <a
+          [class.bg-warning]="final[1].answerTheQues"
+          (click)="fireevent(1)"
+          >2</a
+        >
+        <a
+          [class.bg-warning]="final[2].answerTheQues"
+          (click)="fireevent(2)"
+          >3</a
+        >
+        <a
+          [class.bg-warning]="final[3].answerTheQues"
+          (click)="fireevent(3)"
+          >4</a
+        >
+        <a
+          [class.bg-warning]="final[4].answerTheQues"
+          (click)="fireevent(4)"
+          >5</a
+        >
+        <a
+          [class.bg-warning]="final[5].answerTheQues"
+          (click)="fireevent(5)"
+          >6</a
+        >
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="modal" [style.transform]="
+  changeMe ? 'translate(-50%, -50%) scale(1)' : 'translate(-50%, -50%) scale(0)'
+  ">
+    <div class="modal-header">
+        <div class="title">Your Mock Test Result!!</div>
+        <button (click)="close()" class="close-button" id="closeBtn">
+      &times;
+    </button>
+    </div>
+    <div class="modal-body">
+        You got {{ currentPost.score }} out of 5, {{ mockTishu }},
+    </div>
+</div>
+<div id="overlay" class="" [style.opacity]="changeMe ? '1' : '0'"></div>
+</section>
